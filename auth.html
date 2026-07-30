@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kid Learning 登入完成</title>
+</head>
+<body>
+  <p>登入完成，正在返回 Kid Learning…</p>
+  <script>
+    const callbackUrl = window.location.href;
+    const message = {'flutter-web-auth-2': callbackUrl};
+
+    if (window.opener) {
+      // Keep compatibility with popup-based authentication.
+      setTimeout(() => {
+        window.opener.postMessage(message, window.location.origin);
+        localStorage.setItem('flutter-web-auth-2', callbackUrl);
+        setTimeout(() => window.close(), 250);
+      }, 750);
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage(message, window.location.origin);
+    } else {
+      // Full-page authentication is more reliable on Chrome because it cannot
+      // lose a fast OAuth callback between opening and listening for messages.
+      localStorage.setItem(
+        'flutter.kid_learning_google_oauth_callback',
+        JSON.stringify(callbackUrl),
+      );
+      const appUrl = new URL('./', window.location.href);
+      appUrl.searchParams.set('oauth', 'google');
+      window.location.replace(appUrl.toString());
+    }
+  </script>
+</body>
+</html>
