@@ -1,7 +1,7 @@
 {
-  "versionCode": 7,
-  "versionName": "1.0.6",
-  "apkUrl": "https://github.com/planck100/KIDLEARN-RELEASES/releases/download/v1.0.6/kid-learning-v1.0.6.apk",
-  "sha256": "AD33DB66B7E158E38A7BC590FC2E1F34EC8E3C9E9E74C5EEC95AE6FC3466AB45",
-  "notes": "家長中心新增自動與手動檢查更新；國字搜尋改為查詢各小孩已建立的字庫，並加入刪除二次確認。"
+  "versionCode": 8,
+  "versionName": "1.0.7",
+  "apkUrl": "https://github.com/planck100/KIDLEARN-RELEASES/releases/download/v1.0.7/kid-learning-v1.0.7.apk",
+  "sha256": "B74333FDDA2608593338472ED613B2D3056B846177EFA8D5E4589AA8FAD78225",
+  "notes": "修正家長中心國字字庫搜尋：搜尋會直接篩選清單，可勾選或取消勾選；搜尋條件顯示為單一標籤，可按 × 清除。"
 }
